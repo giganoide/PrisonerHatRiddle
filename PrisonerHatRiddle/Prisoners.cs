@@ -10,15 +10,16 @@ namespace PrisonerHatRiddle
     {
         public string GetAllResponses(string hats)
         {
-            string [] hatsArray = hats.Split(' ');
+            string[] hatsArray = hats.Split(' ');
             int arrayLength = hatsArray.Length;
             List<string> resposeList = new List<string>();
-            hatsArray = RemoveFirstItemIfExists(hatsArray);
+            string[] nextHats = CloneArray(hatsArray);
+            nextHats = RemoveFirstItemIfExists(hatsArray);
             bool memOddParity = GetOddParityOfBlackHats(hatsArray);
             for (int i = 0; i < arrayLength; i++)
             {
-                bool oddParity = GetOddParityOfBlackHats(hatsArray);
-                if (hatsArray.Length == arrayLength - 1 || hatsArray.Length == 0)
+                bool oddParity = GetOddParityOfBlackHats(nextHats);
+                if (IsFirstPrisoner(i) || IsLasrPrisoner(nextHats))
                 {
                     resposeList.Add(memOddParity ? "B" : "W");
                 }
@@ -27,10 +28,27 @@ namespace PrisonerHatRiddle
                     resposeList.Add(memOddParity ^ oddParity ? "B" : "W");
                 }
                 memOddParity = NegateParityIfOddIsDifferent(memOddParity, oddParity);
-                hatsArray = RemoveFirstItemIfExists(hatsArray);
+                nextHats = RemoveFirstItemIfExists(nextHats);
             }
             
             return string.Join(" ", resposeList.ToArray());
+        }
+
+        private string[] CloneArray(string[] array)
+        {
+            string[] cloneArray = new string[array.Length];
+            array.CopyTo(cloneArray, 0);
+            return cloneArray;
+        }
+
+        private static bool IsLasrPrisoner(string[] hatsArray)
+        {
+            return hatsArray.Length == 0;
+        }
+
+        private bool IsFirstPrisoner(int index)
+        {
+            return index == 0;
         }
 
         private bool NegateParityIfOddIsDifferent(bool prevParity, bool actualParity)
