@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PrisonerHatRiddle
 {
-    public class Class1
+    public class Prisoners
     {
+        public string GetAllResponses(string hats) { return ""; }
     }
 }
