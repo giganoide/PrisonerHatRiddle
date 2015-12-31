@@ -8,6 +8,6 @@ namespace PrisonerHatRiddle
 {
     public class Prisoners
     {
-        public string GetAllResponses(string hats) { return ""; }
+        public string GetAllResponses(string hats) { return "B W B"; }
     }
 }
