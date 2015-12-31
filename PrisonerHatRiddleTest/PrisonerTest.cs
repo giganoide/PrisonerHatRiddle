@@ -31,14 +31,14 @@ namespace PrisonerHatRiddleTest
             prisoners = null;
         }
 
-        /*
         [TestCase("W W B B W W W W W B", "B W B B W W W W W B")]
+        [TestCase("B W B B W W B W W B", "W W B B W W B W W B")]
+        [TestCase("W W B B W W B B W W", "W W B B W W B B W W")]
         public void AcceptanceTests(string hats, string expected)
         {
             Assert.AreEqual(expected, prisoners.GetAllResponses(hats));
         }
-        */
-
+        
         [TestCase("W W B", "B W B")]
         [TestCase("W W W", "W W W")]
         [TestCase("W B W", "B B W")]

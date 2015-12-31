@@ -14,8 +14,8 @@ namespace PrisonerHatRiddle
             int arrayLength = hatsArray.Length;
             List<string> resposeList = new List<string>();
             string[] nextHats = CloneArray(hatsArray);
-            nextHats = RemoveFirstItemIfExists(hatsArray);
-            bool memOddParity = GetOddParityOfBlackHats(hatsArray);
+            nextHats = RemoveFirstItemIfExists(nextHats);
+            bool memOddParity = GetOddParityOfBlackHats(nextHats);
             for (int i = 0; i < arrayLength; i++)
             {
                 bool oddParity = GetOddParityOfBlackHats(nextHats);
