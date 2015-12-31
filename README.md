@@ -1,6 +1,5 @@
 # PrisonerHatRiddle
-##TedEd - Can you solve the prisoner hat riddle? by Alex Gendler 
-###http://ed.ted.com/lessons/can-you-solve-the-prisoner-hat-riddle-alex-gendler
+##<a href="http://ed.ted.com/lessons/can-you-solve-the-prisoner-hat-riddle-alex-gendler">TedEd - Can you solve the prisoner hat riddle? by Alex Gendler</a>
 
 ---
 
